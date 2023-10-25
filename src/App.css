@@ -28,6 +28,21 @@
   color: #61dafb;
 }
 
+html, body, #root {
+    min-height: 100vh;
+}
+
+.Post {
+    background-color: #000000;
+    color: #ffffff;
+    min-height: 100vh;
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
