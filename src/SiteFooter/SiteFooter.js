@@ -5,7 +5,9 @@ export default () => {
 
   return (
     <footer className={"Footer"}>
-      <a href={"#"}>Information</a>
+      <div className={"Content"}>
+        <a href={"#"}>Information</a>
+      </div>
     </footer>
   )
 

@@ -5,15 +5,15 @@ export default () => {
 
   return (
     <header className={"Header"}>
-      <h1>Shimmer</h1>
-      <nav>
-        <ul>
-          <li>Page 1</li>
-          <li>Page 2</li>
-          <li>Page 3</li>
-          <li>Page 4</li>
-        </ul>
-      </nav>
+      <div className={"Content"}>
+        <h1 className={"SiteName"}>Shimmer</h1>
+        <nav>
+          <a href="#">Page 1</a>
+          <a href="#">Page 2</a>
+          <a href="#">Page 3</a>
+          <a href="#">Page 4</a>
+        </nav>
+      </div>
     </header>
   )
 

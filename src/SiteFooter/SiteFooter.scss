@@ -3,4 +3,20 @@
 .Footer {
   padding: 16px;
   background-color: $silent-midnight;
+  color: $glimmering-silver;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+
+  a {
+    color: $glimmering-silver;
+    text-decoration: none;
+  }
+
+}
+
+.Content {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
 }
