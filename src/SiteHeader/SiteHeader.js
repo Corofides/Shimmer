@@ -1,7 +1,7 @@
 import React from 'react';
 import './SiteHeader.scss';
 
-function SiteHeader() {
+export default () => {
 
   return (
     <header className={"Header"}>
@@ -18,5 +18,3 @@ function SiteHeader() {
   )
 
 }
-
-export default SiteHeader;

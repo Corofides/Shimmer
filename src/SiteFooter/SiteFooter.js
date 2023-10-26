@@ -1,7 +1,7 @@
 import React from 'react';
 import './SiteFooter.scss';
 
-function SiteFooter() {
+export default () => {
 
   return (
     <footer className={"Footer"}>
@@ -10,5 +10,3 @@ function SiteFooter() {
   )
 
 }
-
-export default SiteFooter;

@@ -2,7 +2,7 @@ import React from 'react';
 import './PostPreview.scss';
 
 
-function PostPreview({name, author, date_published}) {
+export default ({name, author, date_published}) => {
 
   return (
     <div className={"PostPreview"}>
@@ -13,5 +13,3 @@ function PostPreview({name, author, date_published}) {
   )
 
 }
-
-export default PostPreview;
