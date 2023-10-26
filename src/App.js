@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import React, {useEffect, useState} from 'react';
 import Markdown from 'react-markdown'
+import PostPreview from './PostPreview';
 import './App.scss';
 
 function App() {
@@ -26,15 +27,27 @@ function App() {
 
   return (
     <div className="Post">
-      {posts.map(({name, author, date_published}) => {
-        return (
-          <div className={"PostPreview"}>
-            <span>{date_published}</span>
-            <h2>{name}</h2>
-            <h3>{author}</h3>
-          </div>
-        )
-      })}
+      <header className={"Header"}>
+        <h1>Shimmer</h1>
+        <nav>
+          <ul>
+            <li>Page 1</li>
+            <li>Page 2</li>
+            <li>Page 3</li>
+            <li>Page 4</li>
+          </ul>
+        </nav>
+      </header>
+      <div className={"BlockPage"}>
+        {posts.map(({name, author, date_published}, index) => {
+          return (
+            <PostPreview name={name} author={author} date_published={date_published} />
+          )
+        })}
+      </div>
+      <footer className={"Footer"}>
+        <a href={"#"}>Information</a>
+      </footer>
       <Markdown>{markDown}</Markdown>
     </div>
   );
