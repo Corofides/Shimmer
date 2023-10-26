@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import React, {useEffect, useState} from 'react';
 import Markdown from 'react-markdown'
 import PostPreview from './PostPreview';
+import SiteHeader from './SiteHeader';
+import SiteFooter from './SiteFooter';
 import './App.scss';
 
 function App() {
@@ -27,17 +29,7 @@ function App() {
 
   return (
     <div className="Post">
-      <header className={"Header"}>
-        <h1>Shimmer</h1>
-        <nav>
-          <ul>
-            <li>Page 1</li>
-            <li>Page 2</li>
-            <li>Page 3</li>
-            <li>Page 4</li>
-          </ul>
-        </nav>
-      </header>
+      <SiteHeader />
       <div className={"BlockPage"}>
         {posts.map(({name, author, date_published}, index) => {
           return (
@@ -45,9 +37,7 @@ function App() {
           )
         })}
       </div>
-      <footer className={"Footer"}>
-        <a href={"#"}>Information</a>
-      </footer>
+      <SiteFooter />
       <Markdown>{markDown}</Markdown>
     </div>
   );
