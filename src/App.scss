@@ -5,16 +5,6 @@ html, body, #root {
   min-height: 100vh;
 }
 
-.Post {
-  background-color: $crystal-white;
-  color: #ffffff;
-  min-height: 100vh;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-
 .BlockPage {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

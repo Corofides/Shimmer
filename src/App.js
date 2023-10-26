@@ -1,9 +1,6 @@
-import logo from './logo.svg';
 import React, {useEffect, useState} from 'react';
-import Markdown from 'react-markdown'
 import PostPreview from './PostPreview';
-import SiteHeader from './SiteHeader';
-import SiteFooter from './SiteFooter';
+import Page from './Page';
 import './App.scss';
 
 function App() {
@@ -29,16 +26,15 @@ function App() {
 
   return (
     <div className="Post">
-      <SiteHeader />
-      <div className={"BlockPage"}>
-        {posts.map(({name, author, date_published}, index) => {
-          return (
-            <PostPreview name={name} author={author} date_published={date_published} />
-          )
-        })}
-      </div>
-      <SiteFooter />
-      <Markdown>{markDown}</Markdown>
+      <Page>
+        <div className={"BlockPage"}>
+          {posts.map(({name, author, date_published}) => {
+            return (
+              <PostPreview name={name} author={author} date_published={date_published} />
+            )
+          })}
+        </div>
+      </Page>
     </div>
   );
 }
