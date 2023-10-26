@@ -8,7 +8,11 @@ export default ({children}) => {
   return (
     <div className={"Page"}>
       <SiteHeader />
-      {children}
+      <div className={"PageContent"}>
+        <div className={"Content"}>
+          {children}
+        </div>
+      </div>
       <SiteFooter />
     </div>
   )

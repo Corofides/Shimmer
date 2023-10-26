@@ -27,14 +27,12 @@ function App() {
   return (
     <div className="Post">
       <Page>
-        <div className={"Content"}>
-          <div className={"BlockPage"}>
-            {posts.map(({name, author, date_published}) => {
-              return (
-                <PostPreview name={name} author={author} date_published={date_published} />
-              )
-            })}
-          </div>
+        <div className={"BlockPage"}>
+          {posts.map(({name, author, date_published}) => {
+            return (
+              <PostPreview name={name} author={author} date_published={date_published} />
+            )
+          })}
         </div>
       </Page>
     </div>

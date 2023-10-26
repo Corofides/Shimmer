@@ -9,3 +9,15 @@
   display: flex;
   flex-direction: column;
 }
+
+.PageContent {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+
+  .Content {
+    box-sizing: border-box;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}
