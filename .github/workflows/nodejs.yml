@@ -26,9 +26,9 @@ jobs:
 
     - uses: s0/git-publish-subdir-action@develop
     - name: Push
-        env:
-          REPO: self
-          BRANCH: build # The branch name where you want to push the assets
-          FOLDER: docs # The directory where your assets are generated
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
-          MESSAGE: "Build: ({sha}) {msg}" # The commit message
+      env:
+        REPO: self
+        BRANCH: build # The branch name where you want to push the assets
+        FOLDER: docs # The directory where your assets are generated
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+        MESSAGE: "Build: ({sha}) {msg}" # The commit message
