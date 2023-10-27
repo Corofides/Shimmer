@@ -6,11 +6,21 @@ import './App.scss';
 function App() {
 
   const [markDown, setMarkDown] = useState(false);
+  const [pages, setPages] = useState([]);
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
 
+    fetch('/Shimmer/pages/pages.json').then(response => response.json()).then((result) => {
+      setPages(result);
+    });
+
     fetch('/Shimmer/posts/posts.json').then(response => response.json()).then((result) => {
+
+      if (result.length > 0) {
+        result[0].active = true;
+      }
+
       setPosts(result);
     });
 

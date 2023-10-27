@@ -1,0 +1,11 @@
+[{
+  "title": "Home",
+  "widgets": [
+    "posts"
+  ]
+}, {
+  "title": "Post",
+  "widgets": [
+    "post"
+  ]
+}]
