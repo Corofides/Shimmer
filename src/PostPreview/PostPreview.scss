@@ -3,11 +3,33 @@
 
 .PostPreview {
   background-color: $elegant-gray;
-  padding: 16px;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+
+  &__Image, &__Info {
+    flex: 1;
+    box-sizing: border-box;
+  }
+
+  &__Image {
+    background-color: $glimmering-silver;
+    position: relative;
+
+  }
+
+  &__Info {
+    padding: 16px;
+  }
 
   &:first-of-type {
+    flex-direction: column;
     background-color: $silent-midnight;
     grid-area: main / 1 / 1 / 1;
+
+    .PostPreview__Image {
+      padding: 16px;
+    }
+
   }
 }
