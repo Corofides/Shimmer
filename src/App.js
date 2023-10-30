@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import PostPreview from './PostPreview';
 import Page from './Page';
+import Markdown from 'react-markdown';
 import './App.scss';
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
     fetch('/Shimmer/posts/posts.json').then(response => response.json()).then((result) => {
 
       if (result.length > 0) {
-        result[0].active = true;
+        //result[0].active = true;
       }
 
       setPosts(result);
@@ -34,13 +35,37 @@ function App() {
 
   }, []);
 
+  const activePost = posts.filter((post) => {
+
+    return post.active;
+
+  });
+
+  console.log("ActivePost", activePost);
+
   return (
     <div className="Post">
       <Page>
+
         <div className={"BlockPage"}>
-          {posts.map(({name, author, date_published}) => {
+          {posts.map(({name, author, date_published}, index) => {
             return (
-              <PostPreview name={name} author={author} date_published={date_published} />
+              <PostPreview key={index} onClick={(id) => {
+
+                console.log("View Post", index);
+                const newPosts = [...posts];
+
+                newPosts.map((post, index) => {
+
+                  return Object.assign({}, post, {
+                    active: id === index
+                  })
+
+                });
+
+                setPosts(newPosts);
+
+              }} name={name} author={author} date_published={date_published} />
             )
           })}
         </div>
