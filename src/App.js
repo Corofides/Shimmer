@@ -6,6 +6,8 @@ import './App.scss';
 
 function App() {
 
+  // Test 1.
+
   const [pages, setPages] = useState([]);
   const [posts, setPosts] = useState([]);
   const [displayType, setDisplayType] = useState('home');
