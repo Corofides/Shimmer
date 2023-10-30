@@ -18,6 +18,12 @@
 
 .SiteName {
   margin: 0;
+
+  a {
+    color: $crystal-white;
+    text-decoration: none;
+  }
+
 }
 
 nav {

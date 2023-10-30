@@ -6,13 +6,12 @@ export default () => {
   return (
     <header className={"Header"}>
       <div className={"Content"}>
-        <h1 className={"SiteName"}>Shimmer</h1>
-        <nav>
-          <a href="#">Page 1</a>
-          <a href="#">Page 2</a>
-          <a href="#">Page 3</a>
-          <a href="#">Page 4</a>
-        </nav>
+        <h1 className={"SiteName"}>
+          <a href={"/Shimmer"}>
+            Shimmer
+          </a>
+        </h1>
+        <nav />
       </div>
     </header>
   )
