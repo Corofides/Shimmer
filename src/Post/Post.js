@@ -1,15 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import Markdown from 'react-markdown';
+import './Post.scss';
 
 export default ({post}) => {
 
   const [loading, setLoading] = useState(true);
   const [markdown, setMarkdown] = useState(false);
 
+  console.log("Post", post);
+
   useEffect(() => {
 
-    fetch(post.file).then(response => response.text()).then((text) => {
+    fetch("/Shimmer/posts/" + post.file).then(response => response.text()).then((text) => {
+      console.log("Post", text);
       setMarkdown(text);
+      setLoading(false);
     });
 
   }, []);
@@ -21,7 +26,9 @@ export default ({post}) => {
   }
 
   return (
-    <Markdown>{markdown}</Markdown>
+    <Markdown className={"Post"}>
+      {markdown}
+    </Markdown>
   )
 
 }
