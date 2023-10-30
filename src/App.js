@@ -2,15 +2,12 @@ import React, {useEffect, useState} from 'react';
 import PostPreview from './PostPreview';
 import Page from './Page';
 import Post from './Post';
-import Markdown from 'react-markdown';
 import './App.scss';
 
 function App() {
 
-  const [markDown, setMarkDown] = useState(false);
   const [pages, setPages] = useState([]);
   const [posts, setPosts] = useState([]);
-  const [path, setPath] = useState([]);
   const [displayType, setDisplayType] = useState('home');
   const [activeId, setActiveId] = useState(false);
 
@@ -18,7 +15,15 @@ function App() {
 
     console.log("Path", window.location.pathname);
 
-    const pathParts = window.location.pathname.split('/');
+    const hasPathHash = window.location.href.split('#').length === 2;
+    let pathParts = window.location.pathname.split('/');
+
+    if (hasPathHash) {
+      pathParts = window.location.href.split('#')[1].split('/');
+      pathParts.unshift("Shimmer");
+      pathParts.unshift("");
+    }
+
 
     if (pathParts.length > 2) {
 
@@ -76,7 +81,7 @@ function App() {
             return (
               <PostPreview key={index} onClick={(id) => {
 
-                window.location.href = "/Shimmer/post/" + id;
+                window.location.href = "/Shimmer#post/" + id;
 
               }} id={index} name={name} author={author} date_published={date_published} />
             )
