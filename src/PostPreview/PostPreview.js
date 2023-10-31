@@ -1,9 +1,22 @@
 import React from 'react';
 import {DateTime} from 'luxon';
 import './PostPreview.scss';
+import usePost from '../Hooks/usePosts';
 
 
-export default ({onClick, id, name, author, date_published}) => {
+export default ({onClick, id}) => {
+
+  const {getPost, loading} = usePost();
+
+  if (loading) {
+    return (
+      <div>
+        Loading
+      </div>
+    )
+  }
+
+  const {name, author, date_published} = getPost(id);
 
   const dateTime = DateTime.fromISO(date_published);
 

@@ -2,15 +2,13 @@ import React, {useEffect, useState} from 'react';
 import PostPreview from './PostPreview';
 import Page from './Page';
 import Post from './Post';
+import usePosts from './Hooks/usePosts';
 import './App.scss';
 
 function App() {
 
-  // Test 1.
+  const {posts} = usePosts();
 
-  const [settings, setSettings] = useState(false);
-  const [pages, setPages] = useState([]);
-  const [posts, setPosts] = useState([]);
   const [displayType, setDisplayType] = useState('home');
   const [activeId, setActiveId] = useState(false);
 
@@ -40,31 +38,6 @@ function App() {
 
     }
 
-    fetch ('/Shimmer/settings.json').then(response => response.json()).then((result) => {
-      setSettings(result);
-    });
-
-    fetch('/Shimmer/pages/pages.json').then(response => response.json()).then((result) => {
-      setPages(result);
-    });
-
-    fetch('/Shimmer/posts/posts.json').then(response => response.json()).then((result) => {
-
-      if (result.length > 0) {
-        result[0].active = true;
-      }
-
-      setPosts(result);
-    });
-
-    /* fetch('/Shimmer/posts/2023-10-25_First%20Post.md').then(response => response.text()).then((text) => {
-      setMarkDown(text);
-    }); */
-
-    fetch('/Shimmer/posts').then(response => response.text()).then((text) => {
-      console.log("Directory", text);
-    });
-
   }, []);
 
   console.log("ActiveId", activeId, posts[activeId]);
@@ -83,13 +56,13 @@ function App() {
     <div>
       <Page>
         <div className={"BlockPage"}>
-          {posts.map(({name, author, date_published}, index) => {
+          {posts.map(({id}) => {
             return (
-              <PostPreview key={index} onClick={(id) => {
+              <PostPreview key={id} onClick={(id) => {
 
                 window.location.href = "/Shimmer#post/" + id;
 
-              }} id={index} name={name} author={author} date_published={date_published} />
+              }} id={id} />
             )
           })}
         </div>
