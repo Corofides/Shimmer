@@ -1,11 +1,10 @@
 [{
   "title": "Home",
   "widgets": [
-    "posts"
-  ]
-}, {
-  "title": "Post",
-  "widgets": [
-    "post"
+    {"name": "Header", "children": ["Hello!"]},
+    {"name": "PostPreview", "children": [], "id": 1},
+    {"name": "PostPreview", "children": [], "id": 2},
+    {"name": "PostPreview", "children": [], "id": 3},
+    {"name": "Text", "children": ["This is my first CMS!"]}
   ]
 }]
