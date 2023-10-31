@@ -8,6 +8,7 @@ function App() {
 
   // Test 1.
 
+  const [settings, setSettings] = useState(false);
   const [pages, setPages] = useState([]);
   const [posts, setPosts] = useState([]);
   const [displayType, setDisplayType] = useState('home');
@@ -38,6 +39,10 @@ function App() {
       }
 
     }
+
+    fetch ('/Shimmer/settings.json').then(response => response.json()).then((result) => {
+      setSettings(result);
+    });
 
     fetch('/Shimmer/pages/pages.json').then(response => response.json()).then((result) => {
       setPages(result);
@@ -77,7 +82,6 @@ function App() {
   return (
     <div>
       <Page>
-
         <div className={"BlockPage"}>
           {posts.map(({name, author, date_published}, index) => {
             return (
