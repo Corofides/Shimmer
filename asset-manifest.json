@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Shimmer/static/css/main.95db1afc.css",
-    "main.js": "/Shimmer/static/js/main.0e8ac285.js",
+    "main.css": "/Shimmer/static/css/main.6aca763b.css",
+    "main.js": "/Shimmer/static/js/main.55edc1e3.js",
     "static/js/787.f3470a97.chunk.js": "/Shimmer/static/js/787.f3470a97.chunk.js",
     "index.html": "/Shimmer/index.html",
-    "main.95db1afc.css.map": "/Shimmer/static/css/main.95db1afc.css.map",
-    "main.0e8ac285.js.map": "/Shimmer/static/js/main.0e8ac285.js.map",
+    "main.6aca763b.css.map": "/Shimmer/static/css/main.6aca763b.css.map",
+    "main.55edc1e3.js.map": "/Shimmer/static/js/main.55edc1e3.js.map",
     "787.f3470a97.chunk.js.map": "/Shimmer/static/js/787.f3470a97.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.95db1afc.css",
-    "static/js/main.0e8ac285.js"
+    "static/css/main.6aca763b.css",
+    "static/js/main.55edc1e3.js"
   ]
 }
