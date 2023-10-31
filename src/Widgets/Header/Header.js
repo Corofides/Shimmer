@@ -1,10 +1,10 @@
 import React from 'react';
 import './Header.scss';
 
-const Header = ({children}) => {
+const Header = ({children, ...props}) => {
 
   return (
-    <h1>{children}</h1>
+    <h1 {...props}>{children}</h1>
   )
 
 };

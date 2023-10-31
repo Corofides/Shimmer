@@ -1,10 +1,12 @@
 [{
   "title": "Home",
   "widgets": [
-    {"name": "Header", "children": ["Hello!"]},
+    {"name": "Header", "children": ["Hello!"], "colSpan": 3},
     {"name": "PostPreview", "children": [], "id": 1},
-    {"name": "PostPreview", "children": [], "id": 2},
+    {"name": "PostPreview", "children": [], "id": 2, "colSpan": 2},
     {"name": "PostPreview", "children": [], "id": 3},
-    {"name": "Text", "children": ["This is my first CMS!"]}
+    {"name": "PostPreview", "children": [], "id": 3},
+    {"name": "PostPreview", "children": [], "id": 3},
+    {"name": "Text", "children": ["This is my first CMS!"], "colSpan": 3}
   ]
 }]

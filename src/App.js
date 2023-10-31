@@ -64,10 +64,9 @@ function App() {
         <Page>
           <div className={"BlockPage"}>
             {pages[0].widgets.map(({name, children, ...other}) => {
+
               return (
-                <div>
-                  <Widgets Cmp={name} {...other}>{children}</Widgets>
-                </div>
+                <Widgets Cmp={name} {...other}>{children}</Widgets>
               )
 
             })}

@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-const Text = ({children}) => {
+const Text = ({children, ...props}) => {
 
   return (
-    <p>{children}</p>
+    <p {...props}>{children}</p>
   )
 
 };

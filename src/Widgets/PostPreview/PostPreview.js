@@ -4,7 +4,7 @@ import './PostPreview.scss';
 import usePost from '../../Hooks/usePosts';
 
 
-export default ({onClick = (id) => {}, id}) => {
+export default ({onClick = (id) => {}, id, ...props}) => {
 
   const {getPost, loading} = usePost();
 
@@ -23,7 +23,7 @@ export default ({onClick = (id) => {}, id}) => {
   const dateTime = DateTime.fromISO(date_published);
 
   return (
-    <div onClick={() => {onClick(id)}} className={"PostPreview"}>
+    <div {...props} onClick={() => {onClick(id)}} className={"PostPreview"}>
       <div className={"PostPreview__Image"} />
       <div className={"PostPreview__Info"}>
         <span className={"PostPreview__Published"}>{dateTime.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}</span>
