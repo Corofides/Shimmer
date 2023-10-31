@@ -6,6 +6,7 @@
   cursor: pointer;
   display: flex;
   flex-direction: row;
+  min-height: 150px;
 
   &__Image, &__Info {
     flex: 1;
@@ -15,11 +16,25 @@
   &__Image {
     background-color: $glimmering-silver;
     position: relative;
+    min-width: 50%;
 
   }
 
   &__Info {
     padding: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__Author {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  &__Title {
+    margin: auto 0 0 0;
+    font-size: 16px;
   }
 
   &:first-of-type {
