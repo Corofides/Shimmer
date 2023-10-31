@@ -3,14 +3,19 @@ import PostPreview from './PostPreview';
 import Page from './Page';
 import Post from './Post';
 import usePosts from './Hooks/usePosts';
+import usePages from './Hooks/usePages';
+import Widgets from './Widgets';
 import './App.scss';
 
 function App() {
 
   const {posts} = usePosts();
+  const {pages} = usePages();
 
   const [displayType, setDisplayType] = useState('home');
   const [activeId, setActiveId] = useState(false);
+
+  console.log("Pages", pages);
 
   useEffect(() => {
 
@@ -50,6 +55,27 @@ function App() {
         </Page>
       </div>
     )
+  }
+
+  if (pages.length > 0) {
+
+    return (
+      <div>
+        <Page>
+          <div className={"BlockPage"}>
+            {pages[0].widgets.map(({name, children, ...other}) => {
+              return (
+                <div>
+                  <Widgets Cmp={name} {...other}>{children}</Widgets>
+                </div>
+              )
+
+            })}
+          </div>
+        </Page>
+      </div>
+    )
+
   }
 
   return (
