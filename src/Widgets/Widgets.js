@@ -3,6 +3,7 @@ import Header from './Header';
 import Text from './Text';
 import PostPreview from './PostPreview';
 import Readme from './Readme';
+import Accordion from './Accordion';
 import { css } from 'glamor';
 
 const Widgets = ({Cmp, children = null, colPos = 1, colSpan = 1, ...other}) => {
@@ -18,6 +19,7 @@ const Widgets = ({Cmp, children = null, colPos = 1, colSpan = 1, ...other}) => {
     "Text": Text,
     "PostPreview": PostPreview,
     "Readme": Readme,
+    "Accordion": Accordion,
   };
 
   if (!widgetComponents[Cmp]) {
