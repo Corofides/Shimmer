@@ -4,6 +4,7 @@ import Text from './Text';
 import PostPreview from './PostPreview';
 import Readme from './Readme';
 import Accordion from './Accordion';
+import Post from './Post';
 import { css } from 'glamor';
 
 const Widgets = ({Cmp, children = null, colPos = 1, colSpan = 1, ...other}) => {
@@ -20,6 +21,7 @@ const Widgets = ({Cmp, children = null, colPos = 1, colSpan = 1, ...other}) => {
     "PostPreview": PostPreview,
     "Readme": Readme,
     "Accordion": Accordion,
+    "Post": Post,
   };
 
   if (!widgetComponents[Cmp]) {

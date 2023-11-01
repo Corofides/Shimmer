@@ -33,6 +33,6 @@
   "location": "/posts/:id",
   "title": "Post",
   "widgets": [
-    {"name": "Header", "children": ["Blog Post"], "colSpan": 3, "_id": ""}
+    {"name": "Post", "children": [], "colSpan": 3, "_id": ""}
   ]
 }]
