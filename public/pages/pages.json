@@ -1,4 +1,5 @@
 [{
+  "location": "/",
   "title": "Home",
   "widgets": [
     {"name": "Header", "children": ["Hello!"], "colSpan": 3},
@@ -21,5 +22,17 @@
     {"name": "PostPreview", "children": [], "id": 3},
     {"name": "PostPreview", "children": [], "id": 3},
     {"name": "Text", "children": ["This is my first CMS!"], "colSpan": 3}
+  ]
+}, {
+  "location": "/posts",
+  "title": "Posts",
+  "widgets": [
+    {"name": "Header", "children": ["Blog"], "colSpan": 3}
+  ]
+}, {
+  "location": "/posts/:id",
+  "title": "Post",
+  "widgets": [
+    {"name": "Header", "children": ["Blog Post"], "colSpan": 3, "_id": ""}
   ]
 }]
