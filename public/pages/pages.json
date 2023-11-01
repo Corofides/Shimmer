@@ -2,6 +2,7 @@
   "title": "Home",
   "widgets": [
     {"name": "Header", "children": ["Hello!"], "colSpan": 3},
+    {"name": "Readme", "children": [], "colSpan": 3, "readmeUrl": "/Shimmer/pages/HomeAbout.md"},
     {"name": "PostPreview", "children": [], "id": 1},
     {"name": "PostPreview", "children": [], "id": 2, "colSpan": 2},
     {"name": "PostPreview", "children": [], "id": 3},
