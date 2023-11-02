@@ -30,7 +30,11 @@ const Widgets = ({Cmp, children = null, colPos = 1, colSpan = 1, ...other}) => {
     );
   }
 
-  return (React.createElement(widgetComponents[Cmp], {...other, ...widgetRule}, children))
+  return (
+    <div {...widgetRule}>
+      {React.createElement(widgetComponents[Cmp], {...other}, children)}
+    </div>
+  )
 
 };
 
