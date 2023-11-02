@@ -6,6 +6,8 @@ import Readme from './Readme';
 import Accordion from './Accordion';
 import Post from './Post';
 import PostArchive from './PostArchive'
+import LatestPosts from './LatestPosts';
+
 import { css } from 'glamor';
 
 const Widgets = ({Cmp, children = null, colPos = 1, colSpan = 1, ...other}) => {
@@ -24,6 +26,7 @@ const Widgets = ({Cmp, children = null, colPos = 1, colSpan = 1, ...other}) => {
     "Accordion": Accordion,
     "Post": Post,
     "PostArchive": PostArchive,
+    "LatestPosts": LatestPosts,
   };
 
   if (!widgetComponents[Cmp]) {
