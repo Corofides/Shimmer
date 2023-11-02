@@ -2,11 +2,15 @@ import React from 'react';
 import {DateTime} from 'luxon';
 import './PostPreview.scss';
 import usePost from '../../Hooks/usePosts';
+import useSettings from '../../Hooks/useSettings';
+import { css } from 'glamor';
 
 
 export default ({onClick = (id) => {}, id, ...props}) => {
 
   const {getPost, loading} = usePost();
+  const {settings} = useSettings();
+
 
   console.log("Id", id);
 
@@ -18,19 +22,49 @@ export default ({onClick = (id) => {}, id, ...props}) => {
     )
   }
 
+  const postPreviewRule = css({
+    "background-color": settings['brand-secondary-bg'],
+    "cursor": "pointer",
+    "display": "flex",
+    "flex-direction": "row",
+    "min-height": "150px",
+  });
+
+  const imageRule = css({
+    "background-color": settings['dark-bg'],
+    "position": "relative",
+    "min-width": "50%",
+  });
+
+  const subTextRule = css({
+    "color": settings["brand-secondary-text"],
+    "font-size": "14px;"
+  });
+
+  const titleRule = css({
+    "color": settings['brand-secondary-text'],
+    "margin": "auto 0 0 0",
+    "font-size": "16px",
+  });
+
+  const authorRule = css({
+    "margin-bottom": 0,
+    "margin-top": 0,
+  });
+
   const {name, author, date_published} = getPost(id);
 
   const dateTime = DateTime.fromISO(date_published);
 
   return (
-    <div {...props} onClick={() => {onClick(id)}} className={"PostPreview"}>
-      <div className={"PostPreview__Image"} />
+    <a href={"/Shimmer#posts/" + id} {...props} {...postPreviewRule} onClick={() => {onClick(id)}} className={"PostPreview"}>
+      <div {...imageRule} className={"PostPreview__Image"} />
       <div className={"PostPreview__Info"}>
-        <span className={"PostPreview__Published"}>{dateTime.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}</span>
-        <h2 className={"PostPreview__Title"}>{name}</h2>
-        <h3 className={"PostPreview__Author"}>By {author}</h3>
+        <span {...subTextRule} className={"PostPreview__Published"}>{dateTime.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}</span>
+        <h2 {...titleRule} className={"PostPreview__Title"}>{name}</h2>
+        <h3 {...subTextRule} {...authorRule} className={"PostPreview__Author"}>By {author}</h3>
       </div>
-    </div>
+    </a>
   )
 
 }
