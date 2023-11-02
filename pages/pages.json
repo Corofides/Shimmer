@@ -20,7 +20,8 @@
     {"name": "PostPreview", "children": [], "id": 3},
     {"name": "PostPreview", "children": [], "id": 3},
     {"name": "PostPreview", "children": [], "id": 3},
-    {"name": "Text", "children": ["This is my first CMS!"], "colSpan": 3}
+    {"name": "Text", "children": ["This is my first CMS!"], "colSpan": 3},
+    {"name": "LatestPosts", "children": [], "colSpan": 3}
   ]
 }, {
   "location": "/posts",
