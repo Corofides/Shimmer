@@ -1,5 +1,5 @@
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/Corofides/Shimmer/nodejs.yml?logo=github&logoColor=white)
-![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/corofides/Shimmer?logo=github&logoColor=white)
+[![pages-build-deployment](https://github.com/Corofides/Shimmer/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Corofides/Shimmer/actions/workflows/pages/pages-build-deployment)
 
 [Shimmer Site](https://corofides.github.io/Shimmer)
 
