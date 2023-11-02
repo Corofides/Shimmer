@@ -2,7 +2,6 @@
   "location": "/",
   "title": "Home",
   "widgets": [
-    {"name": "Header", "children": ["Hello!"], "colSpan": 3},
     {"name": "Readme", "children": [], "colSpan": 3, "readmeUrl": "/Shimmer/pages/HomeAbout.md"},
     {"name": "Accordion", "children": [], "colSpan": 3, "items": [
       {
