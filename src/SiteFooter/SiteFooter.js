@@ -1,6 +1,5 @@
 import React from 'react';
 import useSettings from '../Hooks/useSettings';
-import './SiteFooter.scss';
 import { css } from 'glamor';
 
 export default () => {
