@@ -26,7 +26,8 @@
   "location": "/posts",
   "title": "Posts",
   "widgets": [
-    {"name": "Header", "children": ["Blog"], "colSpan": 3}
+    {"name": "Header", "children": ["Blog"], "colSpan": 3},
+    {"name": "PostArchive", "children": [], "colSpan": 3}
   ]
 }, {
   "location": "/posts/:id",
