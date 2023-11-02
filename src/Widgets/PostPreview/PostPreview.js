@@ -52,13 +52,15 @@ export default ({onClick = (id) => {}, id, ...props}) => {
     "margin-top": 0,
   });
 
-  const {name, author, date_published} = getPost(id);
+  const {name, author, date_published, image} = getPost(id);
+
+  console.log("PostImage", image);
 
   const dateTime = DateTime.fromISO(date_published);
 
   return (
     <a href={"/Shimmer#posts/" + id} {...props} {...postPreviewRule} onClick={() => {onClick(id)}} className={"PostPreview"}>
-      <div {...imageRule} className={"PostPreview__Image"} />
+      {image ? <div {...imageRule} className={"PostPreview__Image"} /> : null}
       <div className={"PostPreview__Info"}>
         <span {...subTextRule} className={"PostPreview__Published"}>{dateTime.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)}</span>
         <h2 {...titleRule} className={"PostPreview__Title"}>{name}</h2>
