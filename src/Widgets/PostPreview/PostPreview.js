@@ -6,7 +6,7 @@ import Loading from './Views/Loading'
 import Loaded from './Views/Loaded';
 
 
-export default ({onClick = (id) => {}, id, ...props}) => {
+const PostPreview = ({onClick = (id) => {}, id, ...props}) => {
 
   const {getPost, loading} = usePost();
 
@@ -25,6 +25,6 @@ export default ({onClick = (id) => {}, id, ...props}) => {
     <Loaded name={name} author={author} published={published} image={image} {...props} />
   )
 
+};
 
-
-}
+export default PostPreview;

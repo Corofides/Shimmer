@@ -1,7 +1,6 @@
 import React from 'react';
 import useSettings from '../../../../Hooks/useSettings'
 import {css} from "glamor";
-import {DateTime} from "luxon";
 
 const Loading = () => {
 
