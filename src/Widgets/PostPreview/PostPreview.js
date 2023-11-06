@@ -22,7 +22,7 @@ const PostPreview = ({onClick = (id) => {}, id, ...props}) => {
   const published = dateTime.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
 
   return (
-    <Loaded name={name} author={author} published={published} image={image} {...props} />
+    <Loaded name={name} id={id} author={author} published={published} image={image} {...props} />
   )
 
 };
