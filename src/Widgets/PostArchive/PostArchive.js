@@ -5,7 +5,7 @@ import { css } from 'glamor'
 
 const PostArchive = () => {
 
-  const {posts, loading} = usePosts();
+  const {posts, loading, publishedPosts} = usePosts();
 
   if (loading) {
     return (
@@ -26,7 +26,7 @@ const PostArchive = () => {
 
   return (
     <div {...postArchiveRule}>
-      {posts.map(({id}) => {
+      {publishedPosts.map(({id}) => {
 
         return (
           <PostPreview id={id} />

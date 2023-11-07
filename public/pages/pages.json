@@ -15,6 +15,7 @@
         "content": "The project should be extendable. Simply dropping custom React widgets into the project you should be able to power new and custom widgets in the project. These widgets will have the full range of settings as a standard widget in the project"
       }
     ]},
+    {"name": "PostArchive", "children": [], "colSpan": 3},
     {"name": "PostPreview", "children": [], "id": 1},
     {"name": "PostPreview", "children": [], "id": 2},
     {"name": "PostPreview", "children": [], "id": 3},

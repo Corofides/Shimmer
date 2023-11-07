@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import useFetch from '../useFetch';
 import useSettings from '../useSettings';
+import {DateTime} from 'luxon';
 
 const usePosts = () => {
 
@@ -33,7 +34,9 @@ const usePosts = () => {
     return posts.find((post) => {return post.id === id});
   };
 
-  return {posts, loading, getPost}
+  const publishedPosts = posts.filter(({date_published}) => DateTime.fromISO(date_published) <= DateTime.now());
+
+  return {posts, loading, getPost, publishedPosts}
 
 
 };
