@@ -1,8 +1,8 @@
 [
   {
-    "name": "First Post",
-    "date_published": "2023-10-25T09:30:00",
-    "date_modified": "2023-10-25T09:30:00",
+    "name": "Draft Post",
+    "date_published": "2025-10-25T09:30:00",
+    "date_modified": "2025-10-25T09:30:00",
     "file": "2023-10-25_First Post.md",
     "author": "James Lendrem",
     "id": 1
