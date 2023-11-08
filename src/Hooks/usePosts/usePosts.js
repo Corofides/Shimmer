@@ -13,16 +13,15 @@ const usePosts = () => {
 
   useEffect(() => {
 
-    if (!cachedLoading && cachedPosts) {
-
-      setPosts(JSON.parse(cachedPosts));
+    fetch( process.env.REACT_APP_SITE_URL + '/posts/posts.json').then(response => response.json()).then((result) => {
+      setPosts(result);
       setLoading(false);
-      return;
+      //return;
+    });
 
-    }
 
-    setPosts([]);
-    setLoading(true);
+    //setPosts([]);
+    //setLoading(true);
 
   }, [cachedPosts, cachedLoading]);
 

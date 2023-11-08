@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
+import {DateTime} from 'luxon';
 
 const useFetch = (location) => {
+
+  const MINUTES_TO_CACHE = 5;
 
   const [loading, setLoading] = useState(true);
   const [isFetching, setIsFetching] = useState(false);
@@ -20,10 +23,25 @@ const useFetch = (location) => {
 
     const valueObject = JSON.parse(values);
 
+    if (!valueObject.hasOwnProperty('timestamp')) {
+      return {
+        isValid: false,
+        isLoading: false,
+      }
+    }
+
     if (valueObject.hasOwnProperty('loading') && values.loading) {
       return {
         isValid: false,
         isLoading: true,
+      }
+    }
+
+
+    if (DateTime.fromMillis(valueObject.timestamp) <= DateTime.now().plus({"minutes": MINUTES_TO_CACHE})) {
+      return {
+        isValid: false,
+        isLoading: false,
       }
     }
 
@@ -57,9 +75,12 @@ const useFetch = (location) => {
 
     }
 
+    console.log("I hate this");
+
     setLoading(true);
     setCachedResponse(location, JSON.stringify({
       "loading": true,
+      "timestamp": DateTime.now().toMillis(),
     }));
 
 
@@ -68,7 +89,8 @@ const useFetch = (location) => {
       setLoading(false);
       setCachedResponse(location, JSON.stringify({
         "loading": false,
-        value: result
+        value: result,
+        "timestamp": DateTime.now().toMillis(),
       }));
       setResult(result);
 
