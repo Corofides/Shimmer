@@ -23,7 +23,7 @@ const usePosts = () => {
     //setPosts([]);
     //setLoading(true);
 
-  }, [cachedPosts, cachedLoading]);
+  }, []);
 
   const getPost = (id) => {
     return posts.find((post) => {return post.id === id});
