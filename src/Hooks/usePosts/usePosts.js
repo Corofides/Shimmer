@@ -5,7 +5,7 @@ import {DateTime} from 'luxon';
 
 const usePosts = () => {
 
-  const {result: cachedPosts, loading: cachedLoading} = useFetch( process.env.REACT_APP_SITE_URL + '/posts/posts.json');
+  //const {result: cachedPosts, loading: cachedLoading} = useFetch( process.env.REACT_APP_SITE_URL + '/posts/posts.json');
 
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
