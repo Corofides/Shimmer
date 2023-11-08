@@ -13,7 +13,7 @@ const usePosts = () => {
 
   useEffect(() => {
 
-    if (!cachedLoading) {
+    if (!cachedLoading && cachedPosts) {
 
       setPosts(JSON.parse(cachedPosts));
       setLoading(false);

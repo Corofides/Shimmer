@@ -14,12 +14,23 @@ const useFetch = (location) => {
     if (values === null) {
       return {
         isValid: false,
+        isLoading: false,
+      }
+    }
+
+    const valueObject = JSON.parse(values);
+
+    if (valueObject.hasOwnProperty('loading') && values.loading) {
+      return {
+        isValid: false,
+        isLoading: true,
       }
     }
 
     return {
       isValid: true,
-      value: values,
+      isLoading: false,
+      value: JSON.parse(values).value,
     }
 
   };
@@ -32,9 +43,11 @@ const useFetch = (location) => {
 
   useEffect(() => {
 
-
-
     const response = getCachedResponse(location);
+
+    if (response.isLoading) {
+      return;
+    }
 
     if (response.isValid) {
 
@@ -44,16 +57,19 @@ const useFetch = (location) => {
 
     }
 
-    /* if (loading) {
-      return;
-    } */
-
     setLoading(true);
+    setCachedResponse(location, JSON.stringify({
+      "loading": true,
+    }));
+
 
     fetch(location).then(result => result.text()).then(result => {
 
       setLoading(false);
-      setCachedResponse(location, result);
+      setCachedResponse(location, JSON.stringify({
+        "loading": false,
+        value: result
+      }));
       setResult(result);
 
     })
