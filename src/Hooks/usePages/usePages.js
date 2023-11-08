@@ -49,12 +49,10 @@ const usePages = () => {
   // Todo Revisit this as I don't like the way it works.
   const getCurrentPage = (route) => {
 
-
-
     const page = pages.find(({location}) => {
 
       const pagePattern = new UrlPattern(location);
-      return pagePattern.match(route) !== null;
+      return pagePattern.match(route.replace('//', '/')) !== null;
 
     });
 
