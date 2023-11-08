@@ -10,9 +10,6 @@ const usePages = () => {
 
   useEffect(() => {
 
-
-    console.log("ProcessEnv", process.env);
-
     fetch( process.env.REACT_APP_SITE_URL + '/pages/pages.json').then(response => response.json()).then((result) => {
 
       const newPages = result.map(({widgets, ...other}) => {

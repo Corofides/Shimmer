@@ -13,12 +13,8 @@ const usePosts = () => {
 
   useEffect(() => {
 
-    console.log("GetCached", cachedLoading, cachedPosts);
-
-
     if (!cachedLoading) {
 
-      console.log("CachedPosts", cachedPosts);
       setPosts(JSON.parse(cachedPosts));
       setLoading(false);
       return;

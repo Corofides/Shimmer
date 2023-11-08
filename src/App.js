@@ -4,15 +4,11 @@ import usePages from './Hooks/usePages';
 import useRoute from './Hooks/useRoute';
 import Widgets from './Widgets';
 import './App.scss';
-import useNav from "./Hooks/useNav";
 
 function App() {
 
   const {loading, getCurrentPage} = usePages();
-  const {navigation, loading: navLoading, getNavForPosition} = useNav();
   const {route, setRoute} = useRoute();
-
-  console.log("Navigation", navigation);
 
   if (loading) {
     return (

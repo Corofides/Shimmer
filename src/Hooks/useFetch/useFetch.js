@@ -35,7 +35,6 @@ const useFetch = (location) => {
 
 
     const response = getCachedResponse(location);
-    console.log("useFetch", "Response", response);
 
     if (response.isValid) {
 
