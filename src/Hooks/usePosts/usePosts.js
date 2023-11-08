@@ -5,8 +5,6 @@ import {DateTime} from 'luxon';
 
 const usePosts = () => {
 
-  //const {result: cachedPosts, loading: cachedLoading} = useFetch( process.env.REACT_APP_SITE_URL + '/posts/posts.json');
-
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -16,12 +14,7 @@ const usePosts = () => {
     fetch( process.env.REACT_APP_SITE_URL + '/posts/posts.json').then(response => response.json()).then((result) => {
       setPosts(result);
       setLoading(false);
-      //return;
     });
-
-
-    //setPosts([]);
-    //setLoading(true);
 
   }, []);
 
@@ -32,7 +25,6 @@ const usePosts = () => {
   const publishedPosts = posts.filter(({date_published}) => DateTime.fromISO(date_published) <= DateTime.now());
 
   return {posts, loading, getPost, publishedPosts}
-
 
 };
 
