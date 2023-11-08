@@ -10,26 +10,26 @@ export default () => {
   const {getNavForPosition, loading} = useNav();
 
   const headerRule = css({
-    "background-color": settings['brand-primary-bg'],
+    "backgroundColor": settings['brand-primary-bg'],
     "padding": "16px",
     "width": "100%",
-    "box-sizing": "border-box",
+    "boxSizing": "border-box",
   });
 
   const contentRule = css({
     "display": "flex",
-    "align-items": "baseline",
-    "justify-content": "space-between",
+    "alignItems": "baseline",
+    "justifyContent": "space-between",
     "width": "100%",
-    "max-width": "1920px",
+    "maxWidth": "1920px",
     "margin": "0 auto",
     "color": settings['brand-primary-text'],
-    "text-decoration": "none",
+    "textDecoration": "none",
   });
 
   const siteNameRule = css({
     "color": settings['brand-primary-text'],
-    "text-decoration": "none",
+    "textDecoration": "none",
     "margin": 0,
   });
 
@@ -42,9 +42,9 @@ export default () => {
           </a>
         </h1>
         <nav>
-            {getNavForPosition("main").map((item) => {
+            {getNavForPosition("main").map((item, index) => {
               return (
-                <a href={process.env.REACT_APP_SITE_URL + "#" + item.location}>{item.label}</a>
+                <a key={index} href={process.env.REACT_APP_SITE_URL + "#" + item.location}>{item.label}</a>
               )
             })}
         </nav>

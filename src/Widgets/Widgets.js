@@ -13,7 +13,7 @@ import { css } from 'glamor';
 const Widgets = ({Cmp, children = null, colPos = 1, colSpan = 1, ...other}) => {
 
   let widgetRule = css({
-    'grid-column': colPos + " / span " + colSpan
+    'gridColumn': colPos + " / span " + colSpan
   });
 
   const widgetComponents = {

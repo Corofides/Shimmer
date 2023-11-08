@@ -17,10 +17,10 @@ const PostArchive = () => {
 
   const postArchiveRule = css({
     "display": "grid",
-    "grid-template-columns": "1fr 1fr 1fr",
-    "grid-template-rows": "auto",
-    "column-gap": "16px",
-    "row-gap": "16px",
+    "gridTemplateColumns": "1fr 1fr 1fr",
+    "gridTemplateRows": "auto",
+    "columnGap": "16px",
+    "rowGap": "16px",
     "width": "100%",
   });
 
@@ -29,7 +29,7 @@ const PostArchive = () => {
       {publishedPosts.map(({id}) => {
 
         return (
-          <PostPreview id={id} />
+          <PostPreview key={id} id={id} />
         )
 
       })}
