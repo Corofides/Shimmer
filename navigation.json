@@ -1,0 +1,9 @@
+{
+  "main": [{
+    "label": "Home",
+    "location": "/"
+  }, {
+    "label": "Blog",
+    "location": "/posts"
+  }]
+}
