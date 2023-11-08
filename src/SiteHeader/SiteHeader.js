@@ -2,10 +2,12 @@ import React from 'react';
 import useSettings from '../Hooks/useSettings';
 import './SiteHeader.scss';
 import { css } from 'glamor';
+import useNav from "../Hooks/useNav";
 
 export default () => {
 
   const {settings} = useSettings();
+  const {getNavForPosition, loading} = useNav();
 
   const headerRule = css({
     "background-color": settings['brand-primary-bg'],
@@ -39,7 +41,13 @@ export default () => {
             {settings.site_name}
           </a>
         </h1>
-        <nav />
+        <nav>
+            {getNavForPosition("main").map((item) => {
+              return (
+                <a href={process.env.REACT_APP_SITE_URL + "#" + item.location}>{item.label}</a>
+              )
+            })}
+        </nav>
       </div>
     </header>
   )
